@@ -2,44 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>QR Dashboard</title>
+    <title>Richi | Portfolio</title>
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle at top, #1e293b, #020617);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            overflow: hidden;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 40px 60px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        .container {
             text-align: center;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+        /* Welcome text */
+        .welcome {
+            font-size: 60px;
+            font-weight: 700;
+            opacity: 0;
+            animation: welcomeAnim 1.5s ease forwards;
         }
 
-        p {
-            font-size: 18px;
-            opacity: 0.9;
+        /* Created by text */
+        .creator {
+            font-size: 22px;
+            margin-top: 15px;
+            opacity: 0;
+            animation: creatorAnim 1.2s ease forwards;
+            animation-delay: 1.6s;
+        }
+
+        /* Profile image */
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 35px auto 0;
+            border: 3px solid rgba(255,255,255,0.6);
+            opacity: 0;
+            animation: imageAnim 1.2s ease forwards;
+            animation-delay: 2.8s;
+        }
+
+        /* Animations */
+        @keyframes welcomeAnim {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes creatorAnim {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes imageAnim {
+            from {
+                opacity: 0;
+                transform: scale(0.6);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>Hello, Welcome 👋</h1>
-        <p>This is my QR-based dashboard</p>
+    <div class="container">
+        <div class="welcome">Welcome</div>
+        <div class="creator">Created by Richi</div>
+
+        <!-- Replace src with your photo later -->
+        <img src="profile.jpg" alt="Richi" class="profile">
     </div>
 
 </body>
 </html>
+
